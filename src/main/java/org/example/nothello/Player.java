@@ -1,14 +1,15 @@
 package org.example.nothello;
 
-import org.example.nothello.Plateau;
+import javafx.scene.paint.Color;
+import org.example.nothello.Graphique.Plateau;
 
 public class Player
 {
     protected String pseudo;
-    protected int couleur;
+    protected Color couleur;
     protected Plateau partiEnCourt;
 
-    public Player(String pseudo, int couleur)
+    public Player(String pseudo, Color couleur)
     {
         this.pseudo = pseudo;
         this.couleur = couleur;
@@ -19,7 +20,7 @@ public class Player
         return this.pseudo;
     }
 
-    public int getCouleur()
+    public Color getCouleur()
     {
         return this.couleur;
     }

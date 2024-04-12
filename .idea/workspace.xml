@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb161fc0-9e6d-47cb-802a-37d1ade54188" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/DisqueBlanc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/DisqueNoir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/JoueurBlanc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/JoueurNoir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Case.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Disque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Disque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Jeu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +59,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.MainView.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -78,5 +92,16 @@
       <updated>1712951878052</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
