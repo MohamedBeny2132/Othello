@@ -1,24 +1,22 @@
 package org.example.nothello.Graphique;
 
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.example.nothello.Graphique.Plateau.Jeu;
+import org.example.nothello.Graphique.Plateau.Plateau;
 import org.example.nothello.JoueurBlanc;
 import org.example.nothello.JoueurNoir;
-import org.example.nothello.Player;
 
-public class Menu extends Scene {
+public class Menu extends Pane
+{
     private TextField pseudoNoirField;
     private TextField pseudoBlancField;
 
-    public Menu() {
-        super(new VBox(), 300, 200);
-        VBox menuLayout = (VBox) getRoot();
-        menuLayout.setSpacing(10);
-
+    public Menu()
+    {
         Label pseudoNoirLabel = new Label("Pseudonyme du joueur noir:");
         pseudoNoirField = new TextField();
         Label pseudoBlancLabel = new Label("Pseudonyme du joueur blanc:");
@@ -27,11 +25,7 @@ public class Menu extends Scene {
         Button validerButton = new Button("Valider");
         validerButton.setOnAction(e -> afficherPlateau());
 
-        menuLayout.getChildren().addAll(
-                pseudoNoirLabel, pseudoNoirField,
-                pseudoBlancLabel, pseudoBlancField,
-                validerButton
-        );
+        getChildren().addAll(pseudoNoirLabel, pseudoNoirField, pseudoBlancLabel, pseudoBlancField, validerButton);
     }
 
     private void afficherPlateau()
@@ -41,9 +35,8 @@ public class Menu extends Scene {
 
         Plateau plateau = new Plateau(new JoueurNoir(pseudoNoir), new JoueurBlanc(pseudoBlanc));
 
-        Stage plateauStage = new Stage();
-        plateauStage.setScene(new Scene(plateau, 400, 300));
-        plateauStage.setTitle("Plateau de jeu");
-        plateauStage.show();
+        Stage stage = (Stage) getScene().getWindow();
+
+        stage.setScene(new Jeu(plateau));
     }
 }

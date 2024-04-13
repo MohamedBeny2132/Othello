@@ -1,9 +1,9 @@
-package org.example.nothello.Graphique;
+package org.example.nothello.Graphique.Plateau;
 
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import org.example.nothello.Graphique.Plateau.Disquee.Disque;
 import org.example.nothello.Position;
 
 public class Case extends StackPane
@@ -33,7 +33,7 @@ public class Case extends StackPane
 
     public Disque getDisque()
     {
-        return this.getDisque();
+        return this.disque;
     }
 
     public Position getPosition()

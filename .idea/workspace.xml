@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb161fc0-9e6d-47cb-802a-37d1ade54188" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/DisqueBlanc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/DisqueNoir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/JoueurBlanc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/JoueurNoir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau/Jeu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Case.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Disque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Disque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Jeu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau/Case.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Disque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau/Disquee/Disque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/DisqueBlanc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau/Disquee/DisqueBlanc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/DisqueNoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau/Disquee/DisqueNoir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Graphique/Plateau/Plateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/nothello/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/nothello/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +67,9 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\safwan\Desktop\git\ProjetEnCour\nOthello\src\main\java\org\example\nothello" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.nothello.Graphique" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example.nothello" />

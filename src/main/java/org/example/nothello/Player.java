@@ -1,7 +1,7 @@
 package org.example.nothello;
 
 import javafx.scene.paint.Color;
-import org.example.nothello.Graphique.Plateau;
+import org.example.nothello.Graphique.Plateau.Plateau;
 
 public class Player
 {
@@ -32,7 +32,7 @@ public class Player
 
     public void poserDisque(int x,int y)
     {
-        this.partiEnCourt.poserDisque(x,y);
+        this.partiEnCourt.jouer(x,y);
     }
 
     public boolean peuJouer()
