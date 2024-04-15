@@ -27,5 +27,10 @@ public class Disque extends Circle
     }
 
 
+    public Disque copie()
+    {
+        return new Disque(couleur);
+    }
+
 
 }

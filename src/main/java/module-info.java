@@ -4,11 +4,15 @@ module org.example.nothello {
 
 
     opens org.example.nothello to javafx.fxml;
-    exports org.example.nothello;
+
     exports org.example.nothello.Graphique;
     opens org.example.nothello.Graphique to javafx.fxml;
     exports org.example.nothello.Graphique.Plateau.Disquee;
     opens org.example.nothello.Graphique.Plateau.Disquee to javafx.fxml;
     exports org.example.nothello.Graphique.Plateau;
     opens org.example.nothello.Graphique.Plateau to javafx.fxml;
+    exports org.example.nothello.Joueur;
+    opens org.example.nothello.Joueur to javafx.fxml;
+    exports org.example.nothello.Utilitaire;
+    opens org.example.nothello.Utilitaire to javafx.fxml;
 }

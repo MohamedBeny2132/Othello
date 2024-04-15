@@ -4,7 +4,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import org.example.nothello.Graphique.Plateau.Disquee.Disque;
-import org.example.nothello.Position;
+import org.example.nothello.Utilitaire.Position;
 
 public class Case extends StackPane
 {
@@ -50,5 +50,13 @@ public class Case extends StackPane
     public boolean estVide()
     {
         return this.disque == null;
+    }
+
+    public Case getCopie()
+    {
+        Case caseCopie = new Case(0,0);
+        caseCopie.setDisque(disque.copie());
+
+        return caseCopie;
     }
 }

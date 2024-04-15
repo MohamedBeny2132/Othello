@@ -3,7 +3,7 @@ package org.example.nothello.Graphique.Plateau;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import org.example.nothello.Player;
+import org.example.nothello.Joueur.Player;
 
 public class Jeu extends Scene
 {
@@ -26,18 +26,26 @@ public class Jeu extends Scene
             @Override
             public void handle(MouseEvent e)
             {
-                int x = (int) (e.getX()/ Case.LARGEUR);
-                int y = (int) (e.getY()/ Case.HAUTEUR);
-
-                if (joueurActuelle.peuJouer())
+                if (!estFini())
                 {
-                    if (joueurActuelle.peuPoserDisque(x,y))
+                    int x = (int) (e.getX()/ Case.LARGEUR);
+                    int y = (int) (e.getY()/ Case.HAUTEUR);
+
+                    if (plateau.coordonneCorrecte(x,y))
                     {
-                        joueurActuelle.poserDisque(x,y);
+
+                        if (joueurActuelle.peuJouer())
+                        {
+                            if (joueurActuelle.peuPoserDisque(x,y))
+                                joueurActuelle.jouer(x,y);
+                        }
+                        changeDeTour();
                     }
                 }
+                else
+                {
 
-                changeDeTour();
+                }
 
 
             }
@@ -50,6 +58,11 @@ public class Jeu extends Scene
         Player tmp = this.joueurActuelle;
         this.joueurActuelle = this.joueurAdverse;
         this.joueurAdverse = tmp;
+    }
+
+    private boolean estFini()
+    {
+        return plateau.estFini();
     }
 
 }

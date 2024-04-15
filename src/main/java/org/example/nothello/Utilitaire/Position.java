@@ -1,4 +1,4 @@
-package org.example.nothello;
+package org.example.nothello.Utilitaire;
 
 public class Position
 {

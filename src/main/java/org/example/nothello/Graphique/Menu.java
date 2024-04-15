@@ -7,8 +7,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.example.nothello.Graphique.Plateau.Jeu;
 import org.example.nothello.Graphique.Plateau.Plateau;
-import org.example.nothello.JoueurBlanc;
-import org.example.nothello.JoueurNoir;
+import org.example.nothello.Joueur.JoueurBlanc;
+import org.example.nothello.Joueur.JoueurNoir;
 
 public class Menu extends Pane
 {
@@ -28,7 +28,7 @@ public class Menu extends Pane
         getChildren().addAll(pseudoNoirLabel, pseudoNoirField, pseudoBlancLabel, pseudoBlancField, validerButton);
     }
 
-    private void afficherPlateau()
+    public void afficherPlateau()
     {
         String pseudoNoir = pseudoNoirField.getText();
         String pseudoBlanc = pseudoBlancField.getText();

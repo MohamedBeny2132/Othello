@@ -7,15 +7,15 @@ import org.example.nothello.Graphique.Plateau.Disquee.DisqueBlanc;
 import org.example.nothello.Graphique.Plateau.Disquee.DisqueNoir;
 
 
-import org.example.nothello.Player;
-import org.example.nothello.Position;
+import org.example.nothello.Joueur.Player;
+import org.example.nothello.Utilitaire.Position;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Plateau extends GridPane
 {
-    public final int TAILLE = 8;
+    public static final int TAILLE = 8;
     private Case[][] plateau;
     private Player joueurActuelle;
     private Player joueurAdverse;
@@ -55,30 +55,36 @@ public class Plateau extends GridPane
         {
             for (int dX = -1;dX <= 1;dX++)
             {
-                nY = y+dY;
-                nX = x+dX;
-
-                while (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == couleurAdverse)
+                if (!(dX == 0 && dY == 0))
                 {
-                    positionCaseARetourner.add(new Position(nX,nY));
-                    nY += dY;
-                    nX += dX;
+                    nY = y + dY;
+                    nX = x + dX;
+
+                    if (coordonneCorrecte(nX, nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == couleurAdverse)
+                    {
+                        do
+                        {
+                            positionCaseARetourner.add(new Position(nX,nY));
+                            nY += dY;
+                            nX += dX;
+
+                        } while (coordonneCorrecte(nX, nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == couleurAdverse);
+
+                        if (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == this.joueurActuelle.getCouleur())
+                        {
+                            for (Position pos : positionCaseARetourner)
+                                this.plateau[pos.getY()][pos.getX()].getDisque().retourne();
+                        }
+
+                        positionCaseARetourner.clear();
+
+                    }
                 }
-
-                if (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == this.joueurActuelle.getCouleur() && caseNonColler(new Position(x,y),new Position(nX,nY)))
-                {
-                    for (Position pos : positionCaseARetourner)
-                        this.plateau[pos.getY()][pos.getX()].getDisque().retourne();
-
-                }
-
-
-                positionCaseARetourner.clear();
-
             }
         }
 
     }
+
 
 
     private boolean peuRetournerDisque(int x,int y)
@@ -91,17 +97,27 @@ public class Plateau extends GridPane
         {
             for (int dX = -1;dX <= 1 && !peuRetorunerAuMoinsUnDisque;dX++)
             {
-                nY = y+dY;
-                nX = x+dX;
-
-                while (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == couleurAdverse)
+                if (!(dX == 0 && dY == 0))
                 {
-                    nY += dY;
-                    nX += dX;
+                    nY = y+dY;
+                    nX = x+dX;
+
+                    if (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == couleurAdverse)
+                    {
+                        do
+                        {
+                            nY += dY;
+                            nX += dX;
+                        } while (coordonneCorrecte(nX, nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == couleurAdverse);
+
+                        if (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == this.joueurActuelle.getCouleur())
+                            peuRetorunerAuMoinsUnDisque = true;
+                    }
                 }
 
-                if (coordonneCorrecte(nX,nY) && !this.plateau[nY][nX].estVide() && this.plateau[nY][nX].getDisque().getCouleur() == this.joueurActuelle.getCouleur() && caseNonColler(new Position(x,y),new Position(nX,nY)))
-                    peuRetorunerAuMoinsUnDisque = true;
+
+
+
 
             }
         }
@@ -112,7 +128,7 @@ public class Plateau extends GridPane
 
     public boolean peuPoserDisque(int x,int y)
     {
-        return  coordonneCorrecte(x,y) && estUneCaseVide(x,y) && peuRetournerDisque(x,y);
+        return estUneCaseVide(x,y) && peuRetournerDisque(x,y);
     }
 
     public boolean peuJouer()
@@ -145,14 +161,11 @@ public class Plateau extends GridPane
     }
 
 
-    private boolean coordonneCorrecte(int x,int y)
+    public boolean coordonneCorrecte(int x,int y)
     {
         return x < TAILLE && x >= 0 && y < TAILLE && y >= 0;
     }
-    private boolean caseNonColler(Position c1, Position c2)
-    {
-        return Math.abs(c1.getX()-c2.getX()) > 1 || Math.abs(c1.getY()- c2.getY()) > 1;
-    }
+
 
     private List<Position> positionDisque(Player joueurViser)
     {
@@ -202,7 +215,7 @@ public class Plateau extends GridPane
 
 
         changeDeTour();
-        peuJouer = peuJouer();
+        peuJouer = peuJouer || peuJouer();
 
         changeDeTour();
 
@@ -242,5 +255,10 @@ public class Plateau extends GridPane
     public Player getJoueurAdverse()
     {
         return this.joueurAdverse;
+    }
+
+
+    public Case[][] getPlateau() {
+        return this.plateau;
     }
 }
